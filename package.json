@@ -7,6 +7,6 @@
   },
   "dependencies": {
     "clamp": "^1.0.1",
-    "react-native": "brentvatne/react-native#00e0233"
+    "react-native": "https://github.com/facebook/react-native/archive/v0.8.0-rc.tar.gz"
   }
 }
