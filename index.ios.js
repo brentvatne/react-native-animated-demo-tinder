@@ -1,16 +1,7 @@
 'use strict';
 
-import React, { AppRegistry, StyleSheet, Text, View, Animated, Component, PanResponder, Image, } from 'react-native';
+import React, { AppRegistry, StyleSheet, Text, View, Animated, Component, PanResponder, } from 'react-native';
 import clamp from 'clamp';
-
-// Network images appear to be broken
-//
-// const People = [
-//   'http://avatars1.githubusercontent.com/u/90494?v=3&s=460',
-//   'http://avatars2.githubusercontent.com/u/56719?v=3&s=400',
-//   'http://avatars0.githubusercontent.com/u/379606?v=3&s=400',
-//   'http://avatars3.githubusercontent.com/u/2922932?v=3&s=400',
-// ]
 
 const People = [
   'red',
@@ -137,8 +128,6 @@ class Flix extends Component {
     );
   }
 }
-
-// <Image source={{uri: this.state.person}} style={{width: 200, height: 200}} resizeMode='cover' />
 
 var styles = StyleSheet.create({
   container: {
