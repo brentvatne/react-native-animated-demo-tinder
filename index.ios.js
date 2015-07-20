@@ -11,6 +11,8 @@ const People = [
   'orange',
 ]
 
+var SWIPE_THRESHOLD = 120;
+
 class Flix extends Component {
   constructor(props) {
     super(props);
@@ -66,7 +68,7 @@ class Flix extends Component {
           velocity = clamp(vx * -1, 3, 5) * -1;
         }
 
-        if (this.state.pan.x._value > 120 || this.state.pan.x._value < -120) {
+        if (Math.abs(this.state.pan.x._value) > SWIPE_THRESHOLD) {
           Animated.decay(this.state.pan.x, {
             velocity: velocity,
             deceleration: 0.98,
