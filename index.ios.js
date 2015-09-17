@@ -62,22 +62,17 @@ class Flix extends Component {
         this.state.pan.flattenOffset();
         var velocity;
 
-        if (vx > 0) {
+        if (vx >= 0) {
           velocity = clamp(vx, 3, 5);
         } else if (vx < 0) {
           velocity = clamp(vx * -1, 3, 5) * -1;
         }
 
         if (Math.abs(this.state.pan.x._value) > SWIPE_THRESHOLD) {
-          Animated.decay(this.state.pan.x, {
-            velocity: velocity,
-            deceleration: 0.98,
-          }).start(this._resetState.bind(this))
-
-          Animated.decay(this.state.pan.y, {
-            velocity: vy,
-            deceleration: 0.985,
-          }).start();
+          Animated.decay(this.state.pan, {
+            velocity: {x: velocity, y: vy},
+            deceleration: 0.98
+          }).start(this._resetState)
         } else {
           Animated.spring(this.state.pan, {
             toValue: {x: 0, y: 0},
